@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="CSS/bootstrap.min.css">
+        <meta name="viewport" content="width = device-width, initial-scale = 1.0">
+        <script src = "./jQuery/jquery-3.5.1.min.js"> </script>
+        <style>
+            h1 {margin-left: 15px;}
+            .none {
+                list-style: none;
+            }
+            ul {
+                float: left;
+            }
+        </style>
+
+    </head>
+    <body>
+        <h1>JESSICA MOVIES COLLECTION</h1>
+        <div class="container">
+            <form action="get">
+                <div class="form-group">
+                    Name
+                    <input id="01" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    Category
+                    <input id="02" class="form-control" type="text">
+                </div>
+                <div class="form-group">
+                    <span id="03" onclick="addMovie()" class="btn btn-success">Add To List</span>
+                </div>
+            </form>
+        </div>
+        <div class="container">
+            <h3>Movies List</h3>
+            
+            <ul>
+                <li class="none"><h4>Action</h4>
+                    <ul class="action">
+                    </ul>
+                </li>
+            </ul>
+            
+            <ul>
+                <li class="none"><h4>Horror</h4>
+                    <ul class="horror">
+                    </ul>
+                </li>
+            </ul>
+            
+            <ul>
+                <li class="none"><h4>Comedy</h4>
+                    <ul class="comedy"></ul>
+                </li>
+            </ul>
+            
+            <ul>
+                <li class="none"><h4>Romance</h4>
+                    <ul class="romance"></ul>
+                </li>
+            </ul>
+            
+            <ul>
+                <li class="none"><h4>Fiction</h4>
+                    <ul class="fiction"></ul>
+                </li>
+            </ul>
+        </div>
+        <script>
+            function addMovie(){
+            var name = $('#01').val();
+            var category = $('#02').val();
+            console.log(name);
+            console.log(category);
+
+            var movies = [];
+            movies.push(name);
+            movies.push(category);
+            console.log(movies);
+            var str = JSON.stringify(movies);
+            console.log(str);
+            if (category == "Action") {
+                $('.action').html("<li> "+name+"</li> ")
+
+            }
+            if (category == "Comedy") {
+                $('.comedy').html("<li> "+name+"</li> ")
+
+            }
+            if (category == "Horror") {
+                $('.horror').html("<li> "+name+"</li> ")
+
+            }
+            if (category == "Fiction") {
+                $('.fiction').html("<li> "+name+"</li> ")
+
+            }
+            if (category == "Romance") {
+                $('.romance').html("<li> "+name+"</li> ")
+
+            }
+
+            
+            }
+
+        </script>
+    </body>
+</html>
